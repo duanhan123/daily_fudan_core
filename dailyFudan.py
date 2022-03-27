@@ -95,7 +95,7 @@ class Fudan:
         data = {
             "username": self.uid,
             "password": self.psw,
-            "service" : "https://zlapp.fudan.edu.cn/site/ncov/fudanDaily"
+            "service" : "https://zlapp.fudan.edu.cn/site/ncov/TfudanDaily"
         }
 
         # 获取登录页上的令牌
@@ -201,7 +201,7 @@ class Zlapp(Fudan):
         """
         headers = {
             "Host"      : "zlapp.fudan.edu.cn",
-            "Referer"   : "https://zlapp.fudan.edu.cn/site/ncov/fudanDaily?from=history",
+            "Referer"   : "https://zlapp.fudan.edu.cn/site/ncov/TfudanDaily?from=history",
             "DNT"       : "1",
             "TE"        : "Trailers",
             "User-Agent": self.UA
@@ -311,7 +311,7 @@ if __name__ == '__main__':
 
     # logging.debug("ACCOUNT：" + uid + psw)
     zlapp_login = 'https://uis.fudan.edu.cn/authserver/login?' \
-                  'service=https://zlapp.fudan.edu.cn/site/ncov/fudanDaily'
+                  'service=https://zlapp.fudan.edu.cn/site/ncov/TfudanDaily'
     daily_fudan = Zlapp(uid, psw, url_login=zlapp_login)
     if not daily_fudan.login():
         iy_info("平安复旦：登陆失败", gl_info)
